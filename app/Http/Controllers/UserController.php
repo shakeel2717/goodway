@@ -52,8 +52,10 @@ class UserController extends Controller
             'email' => 'required|email|min:8|max:40|unique:users',
             'password' => 'required|string|min:8|max:30',
             'refer' => 'nullable',
+            'mobile' => 'required',
+            'wallet' => 'required',
         ]);
-        
+
         $task = new user();
         $task->fname = $validated['fname'];
         $task->lname = $validated['lname'];
@@ -61,6 +63,8 @@ class UserController extends Controller
         $task->email = $validated['email'];
         $task->password = $validated['password'];
         $task->refer = $validated['refer'];
+        $task->mobile = $validated['mobile'];
+        $task->wallet = $validated['wallet'];
         $task->save();
 
 

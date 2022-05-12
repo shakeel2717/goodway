@@ -40,6 +40,18 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="wallet" class="form-control" placeholder="Wallet" value="{{ old('wallet') }}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="mobile" class="form-control" placeholder="Mobile Contact" value="{{ old('mobile') }}">
+                </div>
+            </div>
+        </div>
         <div class="form-group text-left mt-2">
             <div class="checkbox checkbox-primary d-inline">
                 <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
@@ -47,7 +59,7 @@
             </div>
         </div>
         <button class="btn btn-block btn-primary mb-4 rounded-pill">Create Account</button>
-        <p class="mb-0 text-muted">Already have an account? 
+        <p class="mb-0 text-muted">Already have an account?
             <a href="{{route('login')}}" class="sweet f-w-400">Sign In</a>
         </p>
     </form>
