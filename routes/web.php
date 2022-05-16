@@ -11,11 +11,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AttachmentController;
 use App\Http\Controllers\BlockchainController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\LandinPageController;
 use App\Http\Controllers\WalletController;
 use App\Http\Controllers\WithdrawController;
 
 Route::redirect('login', 'authentication/login');
-Route::redirect('/', 'dashboard/index');
+Route::redirect('/', 'landing/index');
 Route::redirect('/admin', 'admin/dashboard/index');
 Route::redirect('logout', 'authentication/logout');
 Route::prefix('/authentication')->group(function () {
@@ -27,6 +28,8 @@ Route::prefix('/authentication')->group(function () {
     Route::get('/update', [UserController::class, 'update'])->name('update');
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 });
+
+Route::resource('landing/index', LandinPageController::class);
 
 Route::prefix('dashboard')->middleware(['auth'])->group(function () {
     Route::get('/index', [dashboard::class, 'index'])->name('dashboard');
@@ -72,10 +75,9 @@ Route::prefix('admin/dashboard')->middleware(['admin'])->group(function () {
     Route::get('/attachment', [AdminController::class, 'attachment'])->name('admin.attachment');
     Route::get('/reAttachment', [AdminController::class, 'reAttachment'])->name('admin.reAttachment');
     Route::post('/reAttachmentReq/{id}', [AdminController::class, 'reAttachmentReq'])->name('admin.reAttachmentReq');
-    
+
     Route::post('/attachment/{id}', [AdminController::class, 'attachmentReq'])->name('admin.attachmentReq');
     Route::get('/blockchain', [BlockchainController::class, 'index'])->name('blockchain');
     Route::post('/balanceAdd', [AdminController::class, 'balanceAdd'])->name('balanceAdd');
     Route::post('/donationAdd', [AdminController::class, 'donationAdd'])->name('donationAdd');
-    
 });
