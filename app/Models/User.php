@@ -19,6 +19,7 @@ class user extends Model
     ];
 
 
+
     public function wallet()
     {
         return $this->hasOne(wallet::class);
