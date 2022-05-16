@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 
 class dashboard extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // calculating the complete amount in bridget database
-        $bridge = bridge::where('user_id', session('user')->id)->where('status', 'Open')->first();
+        $bridge = bridge::where('user_id', $request->session()->get('user')->id)->where('status', 'Open')->first();
         $complete = 0;
         if ($bridge != "") {
             $complete = ($bridge->sent / $bridge->total) * 100;
