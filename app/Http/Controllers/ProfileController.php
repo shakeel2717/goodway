@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = user::findOrFail(session('user')->id);
+        $user = User::findOrFail(session('user')->id);
         return view('dashboard.profile.index', [
             'user' => $user,
         ]);
@@ -40,7 +40,7 @@ class ProfileController extends Controller
             return redirect()->back()->withErrors('Wrong Current Password, Please try again later!');
         }
 
-        $task = user::find(session('user')->id);
+        $task = User::find(session('user')->id);
         $task->password = $validated['password'];
         $task->save();
         session('user')->password = $validated['password'];
@@ -72,7 +72,7 @@ class ProfileController extends Controller
             'code' => 'nullable|string',
         ]);
         $phone = $validated['code'] . $validated['mobile'];
-        $task = user::find(session('user')->id);
+        $task = User::find(session('user')->id);
         $task->fname = $validated['fname'];
         $task->lname = $validated['lname'];
         $task->mobile = $phone;
@@ -129,7 +129,7 @@ class ProfileController extends Controller
 
     public function refers()
     {
-        $refers = user::where('refer', session('user')->username)->get();
+        $refers = User::where('refer', session('user')->username)->get();
         return view('dashboard.profile.refers',compact('refers'));
     }
 }

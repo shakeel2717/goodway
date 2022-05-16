@@ -41,7 +41,7 @@ class AdminController extends Controller
         }
         return view('admin.index', [
             'admins' => admin::all(),
-            'users' => user::all(),
+            'users' => User::all(),
             'totalOnGoingDonations' => $totalOnGoingDonations,
             'totalCompleteDonations' => $totalCompleteDonations,
             'plans' => plan::all(),
@@ -51,7 +51,7 @@ class AdminController extends Controller
     public function users()
     {
         return view('admin.dashboard.users', [
-            'users' => user::all(),
+            'users' => User::all(),
         ]);
     }
 
@@ -74,7 +74,7 @@ class AdminController extends Controller
 
     public function userSuspend($user)
     {
-        $task = user::find($user);
+        $task = User::find($user);
         $task->status = "Suspended";
         $task->save();
         return redirect()->back()->with('message', 'Account Successfully Suspended');
@@ -82,7 +82,7 @@ class AdminController extends Controller
 
     public function userActive($user)
     {
-        $task = user::find($user);
+        $task = User::find($user);
         $task->status = "Active";
         $task->save();
         return redirect()->back()->with('message', 'Account Successfully Suspended');
@@ -310,7 +310,7 @@ class AdminController extends Controller
             'amount' => 'required|numeric',
         ]);
         // find this user
-        $user = user::where('email', $validated['email'])->first();
+        $user = User::where('email', $validated['email'])->first();
         // inserting a transaction for this user to add balance
         $transaction = new transaction();
         $transaction->user_id = $user->id;
@@ -331,7 +331,7 @@ class AdminController extends Controller
         ]);
 
         // findd this user email
-        $user = user::where('email', $validated['email'])->firstOrFail();
+        $user = User::where('email', $validated['email'])->firstOrFail();
         // checking if this user already active donation
         $userDonation = userPlan::where('user_id', $user->id)->where('status', 'Active')->first();
         if ($userDonation != "") {

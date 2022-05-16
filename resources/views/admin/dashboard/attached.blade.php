@@ -24,8 +24,8 @@
                                         <td>{{ $attachment->id }}</td>
                                         <td>{{ $attachment->donation->plan->price }}</td>
                                         <td>{{ $attachment->bridge_id }}</td>
-                                        <td>{{ App\Models\user::find($attachment->sender)->email }}</td>
-                                        <td>{{ App\Models\user::find($attachment->receiver)->email }}</td>
+                                        <td>{{ App\Models\User::find($attachment->sender)->email }}</td>
+                                        <td>{{ App\Models\User::find($attachment->receiver)->email }}</td>
                                         <td>{{ $attachment->status }}</td>
                                         <td>{{ $attachment->amount }}</td>
                                         <td>{{ $attachment->created_at }}</td>

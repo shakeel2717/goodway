@@ -74,7 +74,7 @@ class AttachmentController extends Controller
                 // checking if this user has valid Refer
                 if ($donation->user->refer != "Default") {
                     // getting this refer id
-                    $refer = user::where('username', $donation->user->refer)->first();
+                    $refer = User::where('username', $donation->user->refer)->first();
                     // getting current refer profit ratio
                     $admin = admin::first();
                     $planDetail = plan::find($donation->plan_id);
@@ -119,7 +119,7 @@ class AttachmentController extends Controller
                 // checking if this user has valid Refer
                 if ($donation->user->refer != "Default") {
                     // getting this refer id
-                    $refer = user::where('username', $donation->user->refer)->first();
+                    $refer = User::where('username', $donation->user->refer)->first();
                     // getting current refer profit ratio
                     $admin = admin::first();
                     $planDetail = plan::find($donation->plan_id);

@@ -5,13 +5,13 @@
                 <div class="card">
                     <div class="card-body bg-primary">
                         <h2 class="f-24 font-medium text-white">We Have Assigned you to User:
-                            {{ App\Models\user::find($receive->sender)->username }}</h2>
-                        <p class="m-b-20 text-white">{{ App\Models\user::find($receive->sender)->username }} will send
+                            {{ App\Models\User::find($receive->sender)->username }}</h2>
+                        <p class="m-b-20 text-white">{{ App\Models\User::find($receive->sender)->username }} will send
                             you
                             {{ env('APP_CURRENCY_SYMBOL') }}
                             {{ number_format($receive->amount, 2) }} to
                             your account. if you want to contact directly to
-                            {{ App\Models\user::find($receive->sender)->username }} here's the user contact detail.
+                            {{ App\Models\User::find($receive->sender)->username }} here's the user contact detail.
                         </p>
                         <div class="row mb-2">
                             <div class="col-3 font-weight-bold text-white">Amount</div>
@@ -22,7 +22,7 @@
                         <div class="row mb-2">
                             <div class="col-3 font-weight-bold text-white">Whatsapp</div>
                             <div class="col text-white">
-                                {{ App\Models\user::find($receive->sender)->wallet->whatsapp }}
+                                {{ App\Models\User::find($receive->sender)->wallet->whatsapp }}
                             </div>
                         </div>
                         <hr>

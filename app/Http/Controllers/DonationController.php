@@ -46,7 +46,7 @@ class DonationController extends Controller
         $validated = $request->validate([
         'plan_id' => 'required|integer',
         ]);
-        $user = user::find(session('user')->id);
+        $user = User::find(session('user')->id);
 
         // checking if this user have valid Wallet
         if ($user->wallet->type == "" || $user->wallet->number == "" || $user->wallet->whatsapp == "") {

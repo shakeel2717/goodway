@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-body bg-primary">
                         <h2 class="f-24 font-medium text-white">You Have Assigned to User:
-                            {{ App\Models\user::find($sender->receiver)->username }}</h2>
+                            {{ App\Models\User::find($sender->receiver)->username }}</h2>
                         <div class="bg-white p-2">
                             <h2 class="f-24 font-medium text-warning mb-0">Expiration Time:
                                 {{ $sender->created_at->addDays(1) }}
@@ -24,7 +24,7 @@
                         <div class="row mb-2">
                             <div class="col-3 font-weight-bold text-white">Whatsapp</div>
                             <div class="col text-white">
-                                {{ App\Models\user::find($sender->receiver)->wallet->whatsapp }}
+                                {{ App\Models\User::find($sender->receiver)->wallet->whatsapp }}
                             </div>
                         </div>
                         <div class="row mb-2">

@@ -12,7 +12,7 @@ class attachment extends Model
 
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 
 
@@ -26,5 +26,5 @@ class attachment extends Model
     {
         return $this->belongsTo(plan::class);
     }
-    
+
 }
