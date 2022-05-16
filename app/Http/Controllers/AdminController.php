@@ -9,7 +9,7 @@ use App\Models\donation;
 use App\Models\donner;
 use App\Models\plan;
 use App\Models\transaction;
-use App\Models\user;
+use App\Models\User;
 use App\Models\userPlan;
 use App\Models\wallet;
 use App\Models\withdraw;
@@ -227,7 +227,7 @@ class AdminController extends Controller
             //     } else {
             //         Log::info('Already in Queue');
             //     }
-            // } 
+            // }
             if ($withdraw->amount > $leftAmount) {
                 Log::info('Withdraw Amount is Greater then Left Amount');
                 $alreadyAttached = attachment::where('donation_id', $donation->id)

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\user;
+use App\Models\User;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 

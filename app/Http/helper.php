@@ -6,7 +6,7 @@ use App\Models\commission;
 use App\Models\donation;
 use App\Models\plan;
 use App\Models\transaction;
-use App\Models\user;
+use App\Models\User;
 use App\Models\userPlan;
 use App\Models\withdraw;
 

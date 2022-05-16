@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\user;
+use App\Models\User;
 use App\Models\wallet;
 use Illuminate\Http\Request;
 
@@ -45,7 +45,7 @@ class WalletController extends Controller
             'note' => 'required',
             'whatsapp' => 'required',
         ]);
-        
+
         $task = wallet::find(session('user')->wallet->id);
         $task->type = $validated['type'];
         $task->number = $validated['number'];

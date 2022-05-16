@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\admin;
 use App\Models\plan;
-use App\Models\user;
+use App\Models\User;
 use App\Models\wallet;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
