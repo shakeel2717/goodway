@@ -46,7 +46,7 @@
                         <div class="align-slef-center mr-auto">
                             <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-primary">
                                 {{ number_format(balance(), 2) }}</h2>
-                            <h6 class="text-muted m-b-0">Available Balance</h6>
+                            <h6 class="text-muted m-b-0">Wallet</h6>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                             </h2>
                         </div>
                         <div class="col text-right">
-                            <h4 class="text-warning m-0">{{ $expireDays != '' ? $expireDays : 'No Donation' }}</h4>
+                            <h4 class="text-warning m-0">{{ $expireDays != '' ? $expireDays : now() }}</h4>
                             <span class="d-block">{{ $expireDays != null ? 'Days Left' : '' }}</span>
                         </div>
                     </div>

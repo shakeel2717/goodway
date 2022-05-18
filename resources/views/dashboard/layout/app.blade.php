@@ -230,10 +230,10 @@
                 <!-- [ breadcrumb ] end -->
                 <!-- [ Main Content ] start -->
                 <div class="row">
-                    <div class="col-12 text-right">
+                    {{-- <div class="col-12 text-right">
                         <a href="{{ route('donation.index') }}" class="btn btn-primary btn-lg mb-3">Make
                             Donation</a>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-12">
                         @yield('content')
                     </div>
