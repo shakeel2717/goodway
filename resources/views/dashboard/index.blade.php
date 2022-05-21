@@ -149,7 +149,7 @@
                             <img src="{{ asset('assets/images/icon/box.png') }}" alt="" title="" width="55">
                         </div>
                         <div class="col-auto">
-                            <h6 class="text-muted m-b-10">Sponsor Bonus <a href="{{ route('user.collectCommission') }}"
+                            <h6 class="text-muted m-b-10">Refral Bonus <a href="{{ route('user.collectCommission') }}"
                                     class="text-primary">Collect</a> </h6>
                             <h2 class="m-b-0">{{ number_format(totalCommision(), 2) }}</h2>
                         </div>
