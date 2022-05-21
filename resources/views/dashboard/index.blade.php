@@ -102,7 +102,7 @@
                         <div class="align-slef-center mr-auto">
                             <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-primary">
                                 {{ number_format(pendingWithdraw(), 2) }}</h2>
-                            <h6 class="text-muted m-b-0">Pending Withdraw</h6>
+                            <h6 class="text-muted m-b-0">Pending Balance</h6>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                         <div class="align-slef-center mr-auto">
                             <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-primary">
                                 {{ number_format(activeWithdraw(), 2) }}</h2>
-                            <h6 class="text-muted m-b-0">Approved Withdraw</h6>
+                            <h6 class="text-muted m-b-0">Recieve Balance</h6>
                         </div>
                     </div>
                 </div>

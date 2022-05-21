@@ -132,11 +132,11 @@
                         <li class="nav-item">
                             <a href="{{ route('withdraw.index') }}" class="nav-link ">
                                 <span class="pcoded-micon"><i class="feather icon-upload"></i></span>
-                                <span class="pcoded-mtext">Request Withdraw</span>
+                                <span class="pcoded-mtext">Withdraw Balance</span>
                             </a>
                         </li>
 
-                        <li class="nav-item pcoded-menu-caption">
+                        {{-- <li class="nav-item pcoded-menu-caption">
                             <label>Account Statement</label>
                         </li>
 
@@ -160,7 +160,7 @@
                                 <span class="pcoded-micon"><i class="feather icon-file-plus"></i></span>
                                 <span class="pcoded-mtext">All Profits</span>
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item pcoded-menu-caption">
                             <label>Admin Support</label>
